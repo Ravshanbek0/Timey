@@ -1,7 +1,10 @@
 import { Bell, MapPin, Search, Home, Settings, User } from "lucide-react";
 import React from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import MasterCard from "../../components/masterCard/MasterCard";
 
 export default function HomePage() {
+  const navigate = useNavigate()
   return (
     <div className="min-h-screen bg-gray-50 pb-20">
 
@@ -25,6 +28,7 @@ export default function HomePage() {
         <div className="mt-3 flex items-center bg-white border border-gray-200 rounded-xl px-3 py-2.5 shadow-sm">
           <Search size={18} className="text-gray-400" />
           <input
+            onClick={(() => { navigate("/searchpage/search") })}
             placeholder="Qaysi sartarosh kerak?"
             className="ml-2 w-full bg-transparent outline-none text-sm placeholder-gray-500"
           />
@@ -33,12 +37,16 @@ export default function HomePage() {
 
       {/* TOP CARDS */}
       <div className="px-4 mt-4 grid grid-cols-2 gap-3">
-        <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+        <div onClick={(() => {
+          navigate('/searchpage/near')
+        })} className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
           <p className="font-semibold text-gray-800">Sartarosh topish</p>
           <p className="text-xs text-gray-500 mt-1">Eng yaqin</p>
         </div>
 
-        <div className="bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-xl p-4 text-white shadow-sm hover:shadow-md transition-shadow">
+        <div onClick={(() => {
+          navigate('/searchpage/discount')
+        })} className="bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-xl p-4 text-white shadow-sm hover:shadow-md transition-shadow">
           <p className="font-semibold">Bugun bo'sh sartarosh</p>
           <p className="text-xs opacity-90 mt-1">⚡ Tezkor (chegirmada)</p>
         </div>
@@ -54,51 +62,11 @@ export default function HomePage() {
           <button className="text-indigo-600 text-sm font-medium">Barchasi</button>
         </div>
 
-        {[1, 2, 3].map((_, i) => (
-          <div
-            key={i}
-            className="bg-white border border-gray-200 rounded-xl p-4 mb-3 shadow-sm hover:shadow-md transition-shadow"
-          >
-            <div className="flex justify-between">
-              <div>
-                <div className="flex items-center gap-2">
-                  <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-lg flex items-center justify-center text-white font-bold">
-                    J
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-800">Jamshid Tursunov</p>
-                    <p className="text-sm text-gray-600">Elektrik</p>
-                  </div>
-                </div>
-                
-                <div className="flex gap-2 mt-2">
-                  <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">
-                    Bugun bo'sh
-                  </span>
-                  <span className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded">
-                    -15% Chegirma
-                  </span>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <div className="flex items-center gap-1 bg-amber-100 text-amber-800 px-2 py-1 rounded-lg">
-                  <span className="text-xs font-bold">⭐ 4.8</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex justify-between items-center mt-4 pt-3 border-t border-gray-100">
-              <div>
-                <p className="text-xs text-gray-500">Vaqti</p>
-                <p className="text-sm font-medium text-gray-800">Bugun, 15:30</p>
-              </div>
-              <button className="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white text-sm font-medium px-4 py-2.5 rounded-lg hover:shadow-md transition-shadow">
-                Navbatga yozilish
-              </button>
-            </div>
-          </div>
-        ))}
+        <div className="space-y-3">
+          {[1, 2, 3].map((_, i) => (
+            <MasterCard key={i} />
+          ))}
+        </div>
       </div>
 
       {/* CTA SECTION */}
@@ -121,7 +89,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>      
+      </section>
     </div>
   );
 }
