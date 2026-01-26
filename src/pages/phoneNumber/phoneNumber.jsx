@@ -6,41 +6,9 @@ export default function PhoneNumber() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    if (window.Telegram?.WebApp) {
-      window.Telegram.WebApp.ready();
-      window.Telegram.WebApp.expand();
-      window.Telegram.WebApp.setHeaderColor("#4F46E5"); // Indigo color
-      window.Telegram.WebApp.setBackgroundColor("#F9FAFB"); // Gray-50
-    }
-  }, []);
 
   const requestPhone = () => {
-    setLoading(true);
-    setError(null);
-
-    if (!window.Telegram?.WebApp) {
-      setError("Telegram WebApp not available");
-      setLoading(false);
-      return;
-    }
-
-    window.Telegram.WebApp.requestContact((result) => {
-      setLoading(false);
-
-      if (result?.phone_number) {
-        setPhone(result.phone_number);
-        
-        // Success animation
-        setTimeout(() => {
-          if (window.Telegram?.WebApp) {
-            window.Telegram.WebApp.close();
-          }
-        }, 2000);
-      } else {
-        setError("Telefon raqam olinmadi. Iltimos, qayta urinib ko'ring.");
-      }
-    });
+    window.location.href = "https://t.me/timey_bron_bot"
   };
 
   return (
