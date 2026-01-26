@@ -1,8 +1,9 @@
 import React from "react";
 import { ArrowLeft, Star, Clock, Calendar, MapPin, Edit2, CheckCircle } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function BookingPage() {
+    const navigate = useNavigate()
     return (
         <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white pb-28">
 
@@ -124,7 +125,7 @@ export default function BookingPage() {
                             <p className="text-xs text-gray-500">Taxminiy narx</p>
                             <p className="text-lg font-bold text-gray-900">50 000 so'm</p>
                         </div>
-                        <button className="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-shadow flex items-center gap-2">
+                        <button onClick={(()=>{navigate('/sharephone')})} className="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-shadow flex items-center gap-2">
                             <CheckCircle size={18} />
                             Buyurtmani yuborish
                         </button>

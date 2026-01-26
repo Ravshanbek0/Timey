@@ -5,6 +5,7 @@ import Nav from './components/nav/Nav'
 import SearchPage from './pages/searchpage/SearchPage'
 import MasterProfile from './pages/masterProfile/MasterProfile'
 import BookingPage from './pages/bookingPage/BookingPage'
+import PhoneNumber from './pages/phoneNumber/phoneNumber'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path='/searchpage/:type' element={<SearchPage />} />
           <Route path='/masterProfile' element={<MasterProfile />} />
           <Route path='/bookingPage' element={<BookingPage />} />
+          <Route path='/sharephone' element={<PhoneNumber />} />
         </Routes>
         <Nav/>
       </BrowserRouter>
