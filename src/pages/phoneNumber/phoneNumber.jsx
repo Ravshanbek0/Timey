@@ -8,7 +8,7 @@ export default function PhoneNumber() {
 
 
   const requestPhone = () => {
-    window.location.href = "https://t.me/timey_bron_bot"
+    window.location.href = "https://t.me/timey_bron_bot?start=need_phone"
   };
 
   return (
