@@ -80,7 +80,7 @@ export default function HomePage() {
               Ko'proq mijoz, kamroq bekor vaqt. Har bir soatda qo'shimcha daromad toping
             </p>
             <div className="flex gap-3">
-              <button className="bg-white text-indigo-600 font-semibold px-4 py-2.5 rounded-lg text-sm hover:bg-gray-100 transition-colors flex-1">
+              <button onClick={(() => { window.location.href = "https://timey-landingpage-omega.vercel.app/" })} className="bg-white text-indigo-600 font-semibold px-4 py-2.5 rounded-lg text-sm hover:bg-gray-100 transition-colors flex-1">
                 Usta sifatida qo'shilish
               </button>
               <button className="bg-white/20 border border-white/30 font-medium px-3 py-2.5 rounded-lg text-sm hover:bg-white/30 transition-colors">
