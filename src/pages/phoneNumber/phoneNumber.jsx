@@ -15,6 +15,17 @@ export default function PhoneNumber() {
         } else {
             window.location.href = url;
         }
+        if (window.Telegram?.WebApp) {
+            const tg = window.Telegram.WebApp;
+
+            // WebApp'ni yopish
+            tg.close();
+
+            // Yoki shartli yopish
+            // if (someCondition) {
+            //   tg.close();
+            // }
+        }
 
     };
 
