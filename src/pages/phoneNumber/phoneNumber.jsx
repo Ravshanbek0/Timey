@@ -10,7 +10,7 @@ export default function PhoneNumber() {
     const requestPhone = () => {
         const url = "https://t.me/timey_bron_bot?start=need_phone";
 
-        if (window.Telegram?.WebApp?.openTelegramLink) {
+        if (window.Telegram?.WebApp) {
             window.Telegram.WebApp.openTelegramLink(url);
         } else {
             window.location.href = url;
