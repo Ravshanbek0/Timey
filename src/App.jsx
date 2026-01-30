@@ -6,6 +6,7 @@ import SearchPage from './pages/searchpage/SearchPage'
 import MasterProfile from './pages/masterProfile/MasterProfile'
 import BookingPage from './pages/bookingPage/BookingPage'
 import PhoneNumber from './pages/phoneNumber/phoneNumber'
+import UserProfilePage from './pages/profile/Profile'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='/masterProfile' element={<MasterProfile />} />
           <Route path='/bookingPage' element={<BookingPage />} />
           <Route path='/sharephone' element={<PhoneNumber />} />
+          <Route path='/profile' element={<UserProfilePage />} />
         </Routes>
         <Nav/>
       </BrowserRouter>
